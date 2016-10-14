@@ -2,6 +2,7 @@ package com.yougou.dao.mapper;
 
 import com.yougou.domain.Customer;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -10,10 +11,12 @@ import java.util.List;
  * 通过mybatis注解标注sql,定义sql映射的接口，使用注解指明方法要执行的SQL
  * 使用注解时也可以使用xml映射文件
  */
+
+@Repository
 public interface CustomerMapper {
 
     //使用@Insert注解指明add方法要执行的SQL
-    @Insert("insert into customer(name, age) values(#{name}, #{age})")
+    @Insert("insert into cutomer(last_name, age) values(#{lastName}, #{age})")
     public int add(Customer Customer);
 
     //使用@Delete注解指明deleteById方法要执行的SQL

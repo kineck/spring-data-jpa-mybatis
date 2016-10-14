@@ -20,4 +20,6 @@ public interface CategoryService {
     Page<Category> search(Category category, int pageNo, int pageSize, String sortName);
 
     Page<Category> findAll(int id, int pageNo, int pageSize);
+
+
 }

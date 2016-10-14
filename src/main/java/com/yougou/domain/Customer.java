@@ -4,30 +4,16 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.Cacheable;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.persistence.Transient;
+import javax.persistence.*;
 
-@Table(name="cutomer")
 @Entity
+@Table(name="cutomer")
 public class Customer {
 
 	private Integer id;
 	private String lastName;
-
 	private String email;
 	private int age;
-
 	private Date createdTime;
 	private Date birth;
 
@@ -52,8 +38,8 @@ public class Customer {
 //			valueColumnName="PK_VALUE",
 //			allocationSize=100)
 //	@GeneratedValue(strategy=GenerationType.TABLE,generator="ID_GENERATOR")
-	@GeneratedValue
 	@Id
+	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	public Integer getId() {
 		return id;
 	}
